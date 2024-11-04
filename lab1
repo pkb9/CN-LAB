@@ -47,3 +47,22 @@ $ns at 0.1 "$cbr0 start"
 $ns at 0.1 "$cbr1 start" 
 $ns at 10.0 "finish" 
 $ns run
+
+
+
+
+
+# gedit numDrop.awk
+
+BEGIN{ 
+count=0; 
+} 
+{ 
+if($1=="r") 
+count++ 
+} 
+END{ 
+printf("Number of packets dropped is = %d\n",count);
+}
+
+# awk -f numDrop.awk lab1.tr
